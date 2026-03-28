@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+class Vendor {
+private:
+    string name, email;
+    int year;
+    string contact;
+    float monthlyPurchase[12];
+    float annualTotal;
+
+public:
+    void inputDetails() {
+        cout << "Enter Vendor Name: ";
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "Enter Year of Association: ";
+        cin >> year;
+
+        cout << "Enter Contact Number: ";
+        cin >> contact;
+
+        cout << "Enter Email ID: ";
+        cin >> email;
+    }
+
+    void inputPurchases() {
+        annualTotal = 0;
+        cout << "\nEnter Monthly Purchases:\n";
+        for (int i = 0; i < 12; i++) {
+            cout << "Month " << i + 1 << ": ";
+            cin >> monthlyPurchase[i];
+            annualTotal += monthlyPurchase[i];
+        }
+    }
+
+    void displayReport() {
+        cout << "\n--- Vendor Annual Report ---\n";
+        cout << "Name: " << name << endl;
+        cout << "Year of Association: " << year << endl;
+        cout << "Contact: " << contact << endl;
+        cout << "Email: " << email << endl;
+
+        cout << "\nMonthly Purchases:\n";
+        for (int i = 0; i < 12; i++) {
+            cout << "Month " << i + 1 << ": " << monthlyPurchase[i] << endl;
+        }
+
+        cout << "\nTotal Annual Purchase: " << annualTotal << endl;
+    }
+};
+
+int main() {
+    Vendor v;
+    v.inputDetails();
+    v.inputPurchases();
+    v.displayReport();
+    return 0;
+}
