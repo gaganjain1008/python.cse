@@ -1,0 +1,14 @@
+def convert_to_upper(lines):
+    for line in lines:
+        print(line.upper())
+
+
+# Taking input
+n = int(input("Enter number of lines: "))
+lines = []
+
+for i in range(n):
+    line = input()
+    lines.append(line)
+
+convert_to_upper(lines)
