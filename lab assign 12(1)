@@ -1,0 +1,31 @@
+import pandas as pd
+
+# Creating DataFrame (based on given data)
+data = {
+    "carat": [0.23, 0.21, 0.23, 0.29, 0.31],
+    "cut": ["Ideal", "Premium", "Good", "Premium", "Good"],
+    "color": ["E", "E", "E", "I", "J"],
+    "clarity": ["SI2", "SI1", "VS2", "SI2", "VS1"],
+    "depth": [61.5, 59.8, 62.4, 63.3, 56.9],
+    "table": [55.0, 61.0, 58.0, 58.0, 65.0],
+    "price": [326, 326, 334, 335, 327],
+    "x": [3.95, 3.89, 4.20, 4.34, 4.05],
+    "y": [3.98, 3.84, 4.23, 4.35, 4.07],
+    "z": [2.43, 2.31, 2.63, 2.75, 2.31]
+}
+
+df = pd.DataFrame(data)
+
+# 1) Mean price for each cut
+print("\nMean Price for each Cut:")
+print(df.groupby('cut')['price'].mean())
+
+# 2) Count, Min, Max price for each cut
+print("\nCount, Min and Max Price:")
+print(df.groupby('cut')['price'].agg(['count', 'min', 'max']))
+
+# 3) Average of x, y, z
+print("\nAverage of x, y, z:")
+print("x mean:", df['x'].mean())
+print("y mean:", df['y'].mean())
+print("z mean:", df['z'].mean())
