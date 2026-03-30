@@ -1,0 +1,15 @@
+# Open source file in read mode
+source = open("input.txt", "r")
+
+# Open destination file in write mode
+destination = open("output.txt", "w")
+
+# Read content and convert to uppercase
+content = source.read()
+destination.write(content.upper())
+
+# Close files
+source.close()
+destination.close()
+
+print("File copied successfully in uppercase.")
