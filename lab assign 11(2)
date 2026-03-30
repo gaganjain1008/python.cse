@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+
+companies = ["Microsoft", "Google", "Amazon", "IBM", "Amdocs"]
+recruitments = [120, 150, 100, 80, 90]
+
+# a) Bar Chart
+plt.figure()
+plt.bar(companies, recruitments)
+plt.title("Recruitments by Company")
+plt.show()
+
+# b) Pie Chart
+plt.figure()
+plt.pie(recruitments, labels=companies, autopct='%1.1f%%')
+plt.title("Recruitment Distribution")
+plt.show()
+
+# c) Customized Pie Chart
+plt.figure()
+plt.pie(recruitments, labels=companies, autopct='%1.1f%%', startangle=90)
+plt.title("Customized Pie Chart")
+plt.show()
+
+# d) Doughnut Chart
+plt.figure()
+plt.pie(recruitments, labels=companies)
+centre_circle = plt.Circle((0, 0), 0.5)
+plt.gca().add_artist(centre_circle)
+plt.title("Doughnut Chart")
+plt.show()
+
+# e) Comparison: IBM vs Amdocs
+plt.figure()
+plt.bar(["IBM", "Amdocs"], [80, 90])
+plt.title("IBM vs Amdocs Recruitment Comparison")
+plt.show()
